@@ -19,6 +19,8 @@ KafkaUtils.createDirectStream(...).foreachRDD { rdd =>
 }
 ----
 
+Note that the cast to HasOffsetRanges or CanCommitOffsets will only succeed if called on the result of createDirectStream, not after transformations. 
+
 === [[OffsetRange]] OffsetRange
 
 `OffsetRange` represents a range of offsets from a single Kafka https://kafka.apache.org/0100/javadoc/org/apache/kafka/common/TopicPartition.html[TopicPartition] (i.e. a topic name and partition number).
